@@ -1,0 +1,93 @@
+lst *txt :- gives list of files with txt extension
+lst abc.* :- hives filename with abc with all extensionls
+1-  for files in `ls *.txt`; 
+    > do
+    > echo $files
+    >done
+ :- using for in loop will get a list of files of txt etension (`ls *.txt` - backticks above the tab button)
+2-  for files in `ls *txt`;
+    >do
+    >folderName=`echo $files | awk -F. '{print $1}'`
+    >echo $folderName;
+    >done 
+nano monday.sh :- opens monday file in nano editor
+ctrl+x :- comesout of nano editor
+notepad monday.sh :- opens in notepad
+bash copyfiles.sh
+3:-
+for files in *.txt
+do
+	folderName=`echo $files | awk -F. '{print $1}'`;
+	echo $files;
+	echo $folderName;
+	printf "\n";
+	if [ -d $folderName ]
+	then
+		rm -r $folderName;
+	fi
+	mkdir $folderName;
+	cp $files $folderName/$files;
+done
+
+bash monday.sh :- shows inside content/Execute the file
+bas -x monday.sh :- shows in debug mode
+1.nano add.sh :- creates and opens
+  addition :- read -p "Enter 1st Num : " X
+            read -p "Enter 2nd Num : " Y
+            addition=$(($X+$Y))
+	    echo $addition
+  - ctrl+s ctrl+o ctrl+x
+  - bash add.sh(enter values & gives output)
+  - bash -x add.sh(debug mode)
+2.nano ifelse.sh
+  if [ condition ]
+  then
+      action
+  else
+      action2
+  fi
+read -p "Enter a number : " number
+if [ $((number%2)) == 0 ]
+then
+      echo "Number is Even."
+else
+      echo "Number is Odd."
+fi
+
+
+echo "enter n value as range to calculate odd and even numbers."
+read n
+i=0
+while [ $i -le $n ]
+do
+if [ `expr $i % 2` -eq 0 ]
+then
+echo even=$i
+else
+echo odd=$i
+fi
+i=`expr $i + 1`
+done
+
+read -p "Enter a number : " number
+
+if [ condition ]
+then
+      action1
+elif [ condtion ]
+then
+     action2
+else
+      action3
+fi
+
+read -p "Enter a marks : " marks
+if [ $((marks)) > 35 ]
+then
+      echo "You got passed."
+elif [ $((marks)) > 60 ]
+then
+      echo "You got First Class."
+else
+      echo "Fail!"
+fi
