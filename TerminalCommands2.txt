@@ -1,0 +1,48 @@
+Commands
+pwd :- present working directory
+touch test.txt :- creates a text file inside working directory
+ls :- lists all the files & folder in present working directory
+touch raj.html abc.txt :- we can create n number of files in one go
+mkdir ###### :-creates a folder (make directory)
+ls -a :- shows hided files or folders
+ls . :- list of files & folders in current directory
+ls .. :- list of files & folders in parent directory
+ls ~(tilda) :- shows root directory
+clear :- clears all old commands results
+cp filename foldername :- copy a file to specified folder 
+cd foldername :- goes to specified folder(cd - change directory)
+cd .. :- to go to previous directory
+mv filename folder :- moves file 
+cd ../.. :- we can move to required parent directory
+.. represents previous directory
+cd foldername/foldername/foldername :- jumps to required folder
+rm filename :- deletes file name
+rm -R foldername/ :- deletes folder (R-Recursively)
+ls foldername/ :- without going to that folder we can access all files
+touch foldername/filename :- without going folder we can create a file in required folder
+mv filename filename :- renames file name
+mkdir -p foldername/foldername : create a folder inside folder 
+rmdir foldername/ :- used to delete only empty folders
+history :- will give complete history
+find -name *.html :- finds files with extensions
+find -name '*.html' :- gives files with same extensions
+find -name 'filename.*' :- gives same files name irrespective of extension
+find -size +5M :- shows files which are more than 5mb
+find -size -5M :- shows files which are more than 5mb
+find -size 5M :- gives files which are equal to 5md
+find -size +5M type f :- shows pdf files
+find -size +5M type f -name '*.pdf' :- shows files of pdf type
+cat filename :- to read data inside file
+cat data.csv | grep CAPTAIN :- it'll show data related to CAPTAIN  (grep -i(ignores case sensitive)captain - providies output of caps)
+| - pipe(combine 2 commands & provide single output), grep - used to filter, awk - get required output
+echo/printf :- print hello world
+echo "Hello World" | awk  '{print $0}' :- prints everything
+echo "Hello World" | awk '{$1="Hi"}{print $0}' :- replaces Hello to Hi
+cat data.csv | grep -i captain | awk '{print $2"        " $4}'  :- gives colums values of 2 & 4
+cat data.csv | grep -i captain | awk '{sum+=$4}END{print sum}' :- adds valus in colum
+head -n 3 data.csv :- gets upper 3 rows of table
+tail -n 3 data.csv :- gets lower 3 rows of table
+cat data.csv | head(or tail) -n 3 :- givs data
+cat data.csv | head -n 7 :- gives first 7 rows
+cat data.csv | head -n 7 | tail -n 1 :- shows required row (it'll show 6th row bcs we gave head as 7)
+cata data.csv | head 
