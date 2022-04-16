@@ -1,0 +1,11 @@
+1) print employeeName & Totalpay who has Basaepay grater than 10000
+$ cat data.csv | awk '{if($4>=10000) print $2"   "$7}'
+
+2)What is the aggregate TotalPay of employess whose job title is "CAPTAIN"
+cat data.csv | grep -i captain | awk '{sum+=$7}END{print sum}'
+
+3)print jobTitle and Overtimepay who has overtimepay is between 7000 and 10000
+cat data.csv | awk '{if($5>=7000 && $5<=10000) print $3"   "$5}'
+
+4)print AvergaeBasePay
+cat data.csv | awk '{sum+=$4}END{print sum}'
